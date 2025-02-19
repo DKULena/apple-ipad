@@ -1,3 +1,52 @@
 header {
+    background-color: #3a3a3a;
+
+    .inner {
+        max-width: 1020px;
+        margin: 0 auto;
+    }
     
+    .menu {
+        height: 44px;
+        display: flex;
+        justify-content: space-between;
+
+        .apple-logo,
+        .search-starter,
+        .basket-starter {
+            a {
+                width: 14px;
+                text-indent: -9999px;
+                background-repeat: no-repeat;
+                background-position: center 13px;
+            }
+        }
+
+        .apple-logo a {
+            background-image: url(../assets/images/header_apple.svg);
+        }
+        .search-starter a {
+            background-image: url(../assets/images/header_search.svg);
+        }
+        .basket-starter a {
+            background-image: url(../assets/images/header_bag.svg);
+        }
+
+        li {
+            display: flex;
+            a {
+                padding: 0 10px;
+                font-size: 11px;
+                display: flex;
+                align-items: center;
+                color: #f5f5f5;
+                opacity: .8;
+                text-decoration: none;
+                
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }
