@@ -42,7 +42,12 @@ header {
         }
       }
     }
+  }
+}
 
+/* 장바구니 */
+header {
+  .menu {
     .basket-starter {
       position: relative;
       /* 장바구니 */
