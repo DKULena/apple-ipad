@@ -1,0 +1,24 @@
+/* HERO */
+.hero {
+    .inner {
+        h1 {
+
+        }
+
+        figure {
+            img {}
+            figcaption {
+                .caption-camera{}
+                .caption-chip{}
+                .caption-storage{}
+            }
+        }
+      
+        h2 {}
+
+        .pricing{}
+        .description{}
+        .links{}
+
+    }
+}
