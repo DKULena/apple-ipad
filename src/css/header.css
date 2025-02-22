@@ -124,11 +124,20 @@ header {
 
 /* 검색탭 */
 header {
-  &.searching ul.menu > li {
-    display: none;
+  &.searching {
+
+    ul.menu > li {
+      display: none;
+    }
+
+    .search-wrap {
+      display: block;
+    }
+    
   }
 
   .search-wrap {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
