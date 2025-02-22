@@ -1,6 +1,6 @@
 header {
   background-color: #3a3a3a;
-
+  .inner {max-width: 1080px;}
   .menu {
     height: 44px;
     display: flex;

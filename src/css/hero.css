@@ -1,24 +1,36 @@
 /* HERO */
 .hero {
-    .inner {
-        h1 {
-
-        }
-
-        figure {
-            img {}
-            figcaption {
-                .caption-camera{}
-                .caption-chip{}
-                .caption-storage{}
-            }
-        }
-      
-        h2 {}
-
-        .pricing{}
-        .description{}
-        .links{}
-
+  .inner {
+    padding-bottom: 110px;
+    h1 {
+        width: 221px;
+        height: 91px;
+        background-image: url(../assets/images/hero_ipad_text.png);
     }
+
+    h2 {
+        width: 738px;
+        height: 145px;
+        margin: 0 auto;
+        background-image: url(../assets/images/hero_headline.png);
+    }
+
+    .pricing {
+        margin-top: 40px;
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+    }
+    .description {
+        width: 88%;
+        margin: 18px auto 0;
+        font-size: 19px;
+        text-align: center;
+        
+    }
+
+    .links {
+        margin-top: 30px;
+    }
+  }
 }

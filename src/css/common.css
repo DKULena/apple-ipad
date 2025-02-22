@@ -16,14 +16,17 @@ body {
 }
 
 .inner {
-  max-width: 1020px;
+  max-width: 980px;
   margin: 0 auto;
+  padding: 0 20px;
   position: relative;
 }
 
 a {
   text-decoration: none;
   color: #1d1d1d;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .btn {
@@ -47,5 +50,37 @@ a {
 
   &:focus {
     box-shadow: 0 0 0 4px #81B9F1;
+  }
+}
+
+.bgtext {
+  display: block;
+  text-indent: -9999px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.links {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+a.link {
+  color: #0071E3;
+  font-size: 19px;
+  line-height: 1.3;
+
+  &:hover {
+    text-decoration: underline;
+
+  }
+  &::after {
+    content: " >";
   }
 }
