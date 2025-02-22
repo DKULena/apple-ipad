@@ -30,7 +30,9 @@ const $searchWrap = $header.querySelector(".search-wrap");
 const $searchStarter = $header.querySelector(".search-starter");
 const $searchCloser = $searchWrap.querySelector(".search-closer");
 const $shadow = $searchWrap.querySelector(".shadow");
+const $searchInput = $searchWrap.querySelector('input');
 const $searchDelay = [...$searchWrap.querySelectorAll("li")];
+
 
 const showSearch = () => {
   $header.classList.add("searching");
@@ -42,6 +44,9 @@ const showSearch = () => {
   $searchDelay.forEach(($li, index) => {
     $li.style.transitionDelay = (index * 0.4) / $searchDelay.length + "s";
   });
+    setTimeout(() => {
+        $searchInput.focus();
+    }, 600)
 };
 
 const hideSearch = () => {
@@ -53,7 +58,8 @@ const hideSearch = () => {
   $searchDelay.reverse().forEach(($li, index) => {
     $li.style.transitionDelay = (index * 0.4) / $searchDelay.length + "s";
   });
-  $searchDelay.reverse();
+    $searchDelay.reverse();
+    $searchInput.value = '';
 };
 
 $searchStarter.addEventListener("click", showSearch);

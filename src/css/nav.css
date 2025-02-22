@@ -1,0 +1,55 @@
+nav {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid #d2d2d2;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  .inner {
+    max-width: 1000px;
+    height: 52px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    h1 {
+      font-size: 22px;
+      font-weight: 500;
+      flex-grow: 1;
+    }
+
+    .menu {
+      display: flex;
+      gap: 12px;
+      margin-right: 18px;
+
+      li {
+        &:hover {
+          &.active {
+            a {
+              color: #1d1d1d;
+            }
+          }
+          
+          a {
+            color: #0071e3;
+          }
+        }
+
+        &.active {
+          a {
+            opacity: 0.5;
+            cursor: default;
+          }
+        }
+
+        a {
+          display: block;
+          padding: 6px;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
