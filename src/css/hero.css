@@ -1,11 +1,18 @@
 /* HERO */
 .hero {
+    background-color: var(--color-section);
+    height: 1000px;
+
   .inner {
     padding-bottom: 110px;
+
     h1 {
         width: 221px;
         height: 91px;
         background-image: url(../assets/images/hero_ipad_text.png);
+        position: absolute;
+        transform: translate(624px, 235px);
+        z-index: 1;
     }
 
     h2 {
@@ -33,4 +40,35 @@
         margin-top: 30px;
     }
   }
+}
+
+/* FIGURES */
+
+.hero .figures {
+    height: 808px;
+
+    figure {
+        transform: translate(74px, -64px);
+
+        figcaption {
+            .caption-camera {
+                transform: translate(43px, 580px);
+                background-image: url(../assets/images/hero_ipad_caption_camera.png);
+                width: 120px;
+                height: 84px;
+            }
+            .caption-chip {
+                transform: translate(589px, 426px);
+                background-image: url(../assets/images/hero_ipad_caption_chip.png);
+                width: 95px;
+                height: 43px;
+            }
+            .caption-storage {
+                transform: translate(627px, 504px);
+                background-image: url(../assets/images/hero_ipad_caption_storage.png);
+                width: 80px;
+                height: 43px
+            }
+        }
+    }
 }
