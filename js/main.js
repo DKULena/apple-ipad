@@ -66,3 +66,18 @@ $searchStarter.addEventListener("click", showSearch);
 
 $searchCloser.addEventListener("click", hideSearch);
 $shadow.addEventListener("click", hideSearch);
+
+
+// 요소 가시성 관찰
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting)
+      return;
+    entry.target.classList.add('show');
+  })
+})
+
+const $infos = document.querySelectorAll('.info');
+$infos.forEach((el) => {
+  io.observe(el);
+})
