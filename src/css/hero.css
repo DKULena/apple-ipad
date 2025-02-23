@@ -1,8 +1,6 @@
 /* HERO */
 .hero {
     background-color: var(--color-section);
-    height: 1000px;
-
   .inner {
     padding-bottom: 110px;
 
