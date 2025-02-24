@@ -1,0 +1,42 @@
+/* Facetime */
+.wireless {
+    margin-top: 202px;
+
+    .facetime {
+        h1 {
+            width: 730px;
+            height: 330px;
+            background-image: url(../assets/images/wireless_headline.png);
+            transform: translateX(104px);
+        }
+
+        .figures {
+            height: 773px;
+
+            figure {
+                transform: translateX(-68px);
+
+                figcaption {
+                    width: 139px;
+                    height: 46px;
+                    background-image: url(../assets/images/wireless_facetime_caption.png);
+                    transform: translate(843px, -49px);
+                }
+            }
+        }
+    }
+}
+
+/* FILES */
+.wireless {
+    .files figure {
+        transform: translate(34px, -34px);
+
+        figcaption {
+            width: 127px;
+            height: 46px;
+            background-image: url(../assets/images/wireless_files_caption.png);
+            transform: translate(96px, 639px);
+        }
+    }
+}
