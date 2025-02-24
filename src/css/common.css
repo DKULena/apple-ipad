@@ -144,6 +144,11 @@ a.link {
     justify-content: flex-end;
   }
 }
+
+.infos--large .info {
+  max-width: 410px;
+}
+
 .info {
   max-width: 330px;
   margin-bottom: 24px;
