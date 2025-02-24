@@ -1,0 +1,39 @@
+.display {
+  margin-top: 450px;
+
+  .notes {
+    h1 {
+      width: 630px;
+      height: 370px;
+      background-image: url(../assets/images/display_headline.png);
+      transform: translateX(104px);
+    }
+    .figures {
+      height: 814px;
+      margin-top: 26px;
+    }
+
+    figcaption {
+      width: 145px;
+      height: 45px;
+      background-image: url(../assets/images/display_notes_caption.png);
+      transform: translate(707px, -16px);
+    }
+  }
+
+  .shareplay {
+    margin-top: 55px;
+    .figures {
+      height: 630px;
+      figure {
+        transform: translateX(-360px);
+        figcaption {
+          width: 110px;
+          height: 48px;
+          background-image: url(../assets/images/display_shareplay_caption.png);
+          transform: translate(300px, 658px);
+        }
+      }
+    }
+  }
+}
