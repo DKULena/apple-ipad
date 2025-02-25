@@ -73,7 +73,8 @@ a {
   }
 }
 
-.bgtext {
+.bgtext,
+.bgtext>* {
   display: block;
   text-indent: -9999px;
   background-position: center;
