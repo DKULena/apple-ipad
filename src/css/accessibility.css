@@ -1,0 +1,18 @@
+.accessibility {
+    margin-top: 266px;
+    margin-bottom: 177px;
+
+    h1 {
+        width: 384px;
+        height: 270px;
+        background-image: url(../assets/images/accessibility_headline.png);
+    }
+
+    .infos {
+        margin-top: 20px;
+    }
+
+    figure {
+        transform: translate(470px, -620px);
+    }
+}
