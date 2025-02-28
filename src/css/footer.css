@@ -1,3 +1,4 @@
+/* footer buyinfo */
 footer {
     background-color: var(--color-section);
 
@@ -25,5 +26,24 @@ footer {
         a.link {
             font-size: 14px;
         }
+    }
+}
+
+/* footer warning */
+footer .warning {
+    padding: 18px 0 10px;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+
+    ol {
+        list-style: decimal;
+        padding-left: 16px;
+    }
+
+    li {
+        margin-bottom: 10px;
+        font-size: 11px;
+        line-height: 1.5;
+        color: var(--color-font-darkgray);
     }
 }
