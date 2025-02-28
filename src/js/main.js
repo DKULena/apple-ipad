@@ -1,3 +1,6 @@
+import ipads from "../data/ipads";
+import ipad from "../data/ipads";
+
 // 장바구니
 const $basketStarter = document.querySelector("header .basket-starter");
 const $basket = $basketStarter.querySelector(".basket");
@@ -30,9 +33,8 @@ const $searchWrap = $header.querySelector(".search-wrap");
 const $searchStarter = $header.querySelector(".search-starter");
 const $searchCloser = $searchWrap.querySelector(".search-closer");
 const $shadow = $searchWrap.querySelector(".shadow");
-const $searchInput = $searchWrap.querySelector('input');
+const $searchInput = $searchWrap.querySelector("input");
 const $searchDelay = [...$searchWrap.querySelectorAll("li")];
-
 
 const showSearch = () => {
   $header.classList.add("searching");
@@ -44,9 +46,9 @@ const showSearch = () => {
   $searchDelay.forEach(($li, index) => {
     $li.style.transitionDelay = (index * 0.4) / $searchDelay.length + "s";
   });
-    setTimeout(() => {
-        $searchInput.focus();
-    }, 600)
+  setTimeout(() => {
+    $searchInput.focus();
+  }, 600);
 };
 
 const hideSearch = () => {
@@ -58,8 +60,8 @@ const hideSearch = () => {
   $searchDelay.reverse().forEach(($li, index) => {
     $li.style.transitionDelay = (index * 0.4) / $searchDelay.length + "s";
   });
-    $searchDelay.reverse();
-    $searchInput.value = '';
+  $searchDelay.reverse();
+  $searchInput.value = "";
 };
 
 $searchStarter.addEventListener("click", showSearch);
@@ -67,25 +69,23 @@ $searchStarter.addEventListener("click", showSearch);
 $searchCloser.addEventListener("click", hideSearch);
 $shadow.addEventListener("click", hideSearch);
 
-
 // 요소 가시성 관찰
 const io = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    if (!entry.isIntersecting)
-      return;
-    entry.target.classList.add('show');
-  })
-})
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("show");
+  });
+});
 
-const $infos = document.querySelectorAll('.info');
+const $infos = document.querySelectorAll(".info");
 $infos.forEach((el) => {
   io.observe(el);
-})
+});
 
 // 비디오 재생
-const $video = document.querySelector('.stage video');
-const $playBtn = document.querySelector('.stage .controller--play');
-const $pauseBtn = document.querySelector('.stage .controller--pause');
+const $video = document.querySelector(".stage video");
+const $playBtn = document.querySelector(".stage .controller--play");
+const $pauseBtn = document.querySelector(".stage .controller--pause");
 
 $playBtn.addEventListener("click", () => {
   $video.play();
@@ -96,4 +96,36 @@ $pauseBtn.addEventListener("click", () => {
   $video.pause();
   $playBtn.classList.remove("hide");
   $pauseBtn.classList.add("hide");
+});
+
+// 아이템 렌더링
+const $items = document.querySelector("section.compare .items");
+
+ipads.forEach((ipad) => {
+  const $item = document.createElement("div");
+  $item.classList.add("item");
+
+  let colorList = '';
+  ipad.colors.forEach((color) => {
+    colorList += `<li style="background-color: ${color};"></li>`
+  })
+
+  $item.innerHTML = /* html */ `
+  <div class="thumbnail">
+    <img src="${ipad.thumbnail}" alt = "${ipad.name}" />
+  </div>
+
+  <ul class = "colors">
+    ${colorList}
+  </ul>
+    <h3 class="name">${ipad.name}</h3>
+    <p class = "tagline">${ipad.tagline}</p>
+    <p class = "price">&#8361;${ipad.price.toLocaleString('en-US')}부터</p>
+    <button class="btn">구입하기</button>
+    <a href="${ipad.url}" class="link">더 알아보기</a>
+
+
+  `;
+
+  $items.append($item);
 });
