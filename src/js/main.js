@@ -1,5 +1,6 @@
 import ipads from "../data/ipads";
 import ipad from "../data/ipads";
+import navigations from "../data/navigations";
 
 // 장바구니
 const $basketStarter = document.querySelector("header .basket-starter");
@@ -74,6 +75,7 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
     entry.target.classList.add("show");
+    console.log('watching')
   });
 });
 
@@ -129,3 +131,33 @@ ipads.forEach((ipad) => {
 
   $items.append($item);
 });
+
+// 푸터 내비게이션 맵 랜더링
+const $navigations = document.querySelector('footer .navigations')
+navigations.forEach(nav => {
+  const map = document.createElement('div')
+  map.classList.add('map')
+
+  let mapList = ''
+  nav.maps.forEach(map => {
+    mapList += /* html */ `<li>
+      <a href="${map.url}">${map.name}</a>
+    </li>`
+  })
+
+  map.innerHTML = /* html */ `
+    <h3>
+      <span class="text">${nav.title}</span>
+      <span class="icon">+</span>
+    </h3>
+    <ul>
+      ${mapList}
+    </ul>
+  `
+
+  $navigations.append(map)
+})
+
+// 년도 삽입
+const $this_year = document.querySelector('span.this-year');
+$this_year.textContent = new Date().getFullYear();

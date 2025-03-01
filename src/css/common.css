@@ -26,13 +26,8 @@
   --header-height: 44px;
 }
 
-html {
-  width: 100vw;
+main {
   overflow-x: hidden;
-}
-
-body {
-  width: 100vw;
 }
 
 html.fixed {
