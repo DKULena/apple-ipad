@@ -39,7 +39,7 @@ const $searchDelay = [...$searchWrap.querySelectorAll("li")];
 
 const showSearch = () => {
   $header.classList.add("searching");
-  document.documentElement.classList.add("fixed");
+  stopScroll();
   $headerMenuList.reverse().forEach(($li, index) => {
     $li.style.transitionDelay = (index * 0.4) / $headerMenuList.length + "s";
   });
@@ -54,7 +54,7 @@ const showSearch = () => {
 
 const hideSearch = () => {
   $header.classList.remove("searching");
-  document.documentElement.classList.remove("fixed");
+  playScroll();
   $headerMenuList.reverse().forEach(($li, index) => {
     $li.style.transitionDelay = (index * 0.4) / $headerMenuList.length + "s";
   });
@@ -67,8 +67,53 @@ const hideSearch = () => {
 
 $searchStarter.addEventListener("click", showSearch);
 
-$searchCloser.addEventListener("click", hideSearch);
+$searchCloser.addEventListener("click", (e) => {
+  e.stopPropagation();
+  hideSearch();
+});
 $shadow.addEventListener("click", hideSearch);
+
+const playScroll = () => {
+  document.documentElement.classList.remove("fixed");
+}
+
+const stopScroll = () => {
+  document.documentElement.classList.add("fixed");
+}
+
+// 헤더 메뉴 토글
+const $menuStarter = document.querySelector('header .menu-starter');
+$menuStarter.addEventListener("click", () => {
+  if ($header.classList.contains('menuing')) {
+    $header.classList.remove('menuing');
+    $searchInput.value = "";
+    playScroll();
+  } else {
+    $header.classList.add('menuing');
+    stopScroll();
+  }
+})
+
+// 헤더 검색
+const $searchTextField = document.querySelector('header .textfield');
+const $searchCancel = document.querySelector('header .search-canceler');
+$searchTextField.addEventListener("click", () => {
+  $header.classList.add('searching--mobile');
+  $searchInput.focus();
+})
+$searchCancel.addEventListener("click", () => {
+  $header.classList.remove('searching--mobile');
+})
+
+// 
+window.addEventListener("resize", () => {
+  if (window.innerWidth <= 740) {
+    $header.classList.remove('searching');
+  } else {
+    $header.classList.remove('searching--mobile');
+  }
+
+})
 
 // 요소 가시성 관찰
 const io = new IntersectionObserver((entries) => {
