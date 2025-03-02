@@ -115,6 +115,34 @@ window.addEventListener("resize", () => {
 
 })
 
+const $nav = document.querySelector('nav');
+const $navMenuToggler = $nav.querySelector('.menu-toggler');
+const $navMenuShadow = $nav.querySelector('.shadow')
+
+const showNavMenu = () => {
+  $nav.classList.add('menuing');
+}
+const hideNavMenu = () => {
+  $nav.classList.remove('menuing');
+}
+
+$navMenuToggler.addEventListener("click", () => {
+  if ($nav.classList.contains('menuing')) {
+    hideNavMenu();
+  } else {
+    showNavMenu();
+  }
+})
+
+$nav.addEventListener("click", (e) => {
+  e.stopPropagation();
+})
+$navMenuShadow.addEventListener("click", hideNavMenu);
+
+window.addEventListener("click", hideNavMenu);
+
+
+
 // 요소 가시성 관찰
 const io = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
