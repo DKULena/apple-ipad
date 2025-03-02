@@ -175,6 +175,12 @@ a.link {
   display: flex;
 }
 
+@media (max-width: 740px) {
+  .feature {
+    flex-direction: column;
+  }
+}
+
 .infos {
   display: flex;
   flex-direction: column;
@@ -277,6 +283,39 @@ a.link {
     display: block;
     margin-top: 44px;
     font-size: 19.5px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .info {
+    max-width: 230px;
+  }
+  .infos--large .info {
+    max-width: 288px;
+  }
+  .info .icon {
+    transform: scale(.8);
+    margin: -30px 0 -24px -32px;
+  }
+  .info p {
+    font-size: 19px;
+    line-height: 1.4;
+  }
+  .info a.link {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 740px) {
+  .info {
+    max-width: none;
+    padding: 0 20px;
+  }
+  .infos--large {
+    max-width: none;
+  }
+  .info a.link {
+    font-size: 17px;
   }
 }
 

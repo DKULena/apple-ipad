@@ -33,7 +33,7 @@
         figure {
             transform: translate(-347px, -90px);
 
-            .figcaption {
+            figcaption {
                 width: 150px;
                 height: 77px;
                 background-image: url(../assets/images/power_arcade_caption.png);
@@ -63,5 +63,109 @@
                 transform: translate(548px, 908px);
             }
         }
+    }
+}
+
+@media (max-width: 1000px) {
+    .power {
+        margin-top: 80px;
+    }
+    .power .multiple-apps h1 {
+        width: 310px;
+        height: 180px;
+    }
+    .power .multiple-apps .figures {
+        height: 503px;
+    }
+    .power .multiple-apps .figures figure {
+        transform: translateX(71px);
+    }
+    .power .multiple-apps .figures figure img {
+        width: 682px;
+    }
+    .power .multiple-apps .figures figure figcaption {
+        transform: scale(.8) translate(532px, -58px);
+    }
+
+    .power .arcade {
+        margin-top: 0;
+    }
+
+    .power .arcade .figures {
+        height: 480px;
+    }
+    .power .arcade .figures figure {
+        transform: translate(-182px, -6px);
+    }
+    .power .arcade .figures figure img {
+        width: 676px;
+    }
+    .power .arcade .figures figure figcaption {
+        transform: scale(.8) translate(316px, 528px);
+    }
+
+    .power .create .figures {
+        height: 588px;
+    }
+    .power .create .figures figure {
+        transform: translate(4px, -36px);
+    }
+    .power .create .figures figure img{
+        width: 820px;
+    }
+    .power .create .figures figure figcaption{
+        transform: scale(.8) translate(420px, 747px);
+    }
+}
+
+@media (max-width: 740px) {
+    .power .multiple-apps h1 {
+        margin: 0 auto;
+        transform: none;
+    }
+    .power .multiple-apps .figures {
+        height: 340px;
+        margin-top: 50px;
+    }
+    .power .multiple-apps .figures figure {
+        transform: translateX(20px);
+    }
+    .power .multiple-apps .figures figure img {
+        width: 462px;
+    }
+    .power .multiple-apps .figures figure figcaption {
+        transform: scale(.8) translate(112px, -45px);
+    }
+
+    .power .arcade {
+        margin-top: 30px;
+    }
+    .power .arcade .figures {
+        height: auto;
+        margin-top: 20px;
+        order: 1;
+    }
+    .power .arcade .figures figure {
+        transform: translateX(20px);
+    }
+    .power .arcade .figures figure img {
+        width: 458px;
+    }
+    .power .arcade .figures figure figcaption {
+        transform: scale(.8) translate(316px, 368px);
+    }
+
+    .power .create .figures {
+        height: auto;
+        margin-top: 20px;
+    }
+    .power .create .figures figure {
+        transform: translateX(100px);
+    }
+    .power .create .figures figure img {
+        width: 525px;
+    }
+    .power .create .figures figure figcaption {
+        transform: translate(254px, 486px );
     }
 }
