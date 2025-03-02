@@ -41,7 +41,6 @@
 }
 
 /* FIGURES */
-
 .hero .figures {
     height: 808px;
 
@@ -68,5 +67,86 @@
                 height: 43px
             }
         }
+    }
+}
+
+@media (max-width: 1000px) {
+    .hero .inner {
+        padding-bottom: 80px;
+    }
+
+    .hero .inner h1 {
+        width: 166px;
+        height: 68px;
+        transform: translate(455px, 117px);
+    }
+
+    .hero .inner .figures {
+        height: 584px;
+        margin-bottom: 14px;
+    }
+    .hero .inner figure {
+        transform: translate(70px, -24px);
+    }
+    .hero .inner figure img {
+        width: 540px;
+    }
+    .hero .inner figure figcaption .caption-camera {
+        transform: scale(.8) translate(-9px, 524px);
+    }
+    .hero .inner figure figcaption .caption-chip {
+        transform: scale(.8) translate(510px, 322px);
+    }
+    .hero .inner figure figcaption .caption-storage {
+        transform: scale(.8) translate(556px, 400px);
+    }
+    .hero .inner h2 {
+        width: 515px;
+        height: 95px;
+    }
+}
+
+@media (max-width: 740px) {
+    .hero .inner {
+        padding-top: 40px;
+    }
+    .hero .inner h1 {
+        margin: 0 auto 40px;
+        transform: none;
+        position: static;
+    }
+    .hero .inner .figures {
+        height: auto;
+        margin-bottom: 100px;
+    }
+    .hero .inner figure {
+        transform: none;
+    }
+    .hero .inner figure img {
+        width: 337px;
+    }
+    .hero .inner figure figcaption .caption-camera {
+        background-image: url(../assets/images/hero_ipad_caption_camera_mobile.png);
+        width: 180px;
+        height: 37px;
+        transform: scale(1) translate(21px, 368px);
+    }
+    .hero .inner figure figcaption .caption-chip {
+        transform: scale(.8) translate(248px, 0);
+    }
+    .hero .inner figure figcaption .caption-storage {
+        transform: scale(.8) translate(280px, 100px);
+    }
+    .hero .inner h2 {
+        width: 295px;
+        height: 185px;
+        background-image: url(../assets/images/hero_headline_mobile.png);
+    }
+    .hero.inner p.pricing {
+        font-size: 20px;
+    }
+    .hero.inner p.description {
+        font-size: 17px;
+        width: auto;
     }
 }

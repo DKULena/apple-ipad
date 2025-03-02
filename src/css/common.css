@@ -52,6 +52,12 @@ body {
   position: relative;
 }
 
+@media (max-width: 1000px) {
+  .inner {
+    max-width: 692px;
+  }
+}
+
 a {
   text-decoration: none;
   color: var(---color-font);
@@ -122,6 +128,17 @@ a.link {
   }
 }
 
+@media (max-width: 740px) {
+  .links {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  a.link {
+    font-size: 17px;
+  }
+}
+
 /* FIGURES */
 .figures {
   flex-grow: 1;
@@ -140,6 +157,16 @@ a.link {
       top: 0;
       left: 0;
     }
+  }
+}
+
+@media (max-width: 740px) {
+  .figures {
+    display: flex;
+    justify-content: center;
+  }  
+  .figures figure {
+    position: relative;
   }
 }
 
