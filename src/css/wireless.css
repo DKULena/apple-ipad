@@ -1,42 +1,105 @@
 /* Facetime */
 .wireless {
-    margin-top: 202px;
+  margin-top: 202px;
 
-    .facetime {
-        h1 {
-            width: 730px;
-            height: 330px;
-            background-image: url(../assets/images/wireless_headline.png);
-            transform: translateX(104px);
-        }
-
-        .figures {
-            height: 773px;
-
-            figure {
-                transform: translateX(-68px);
-
-                figcaption {
-                    width: 139px;
-                    height: 46px;
-                    background-image: url(../assets/images/wireless_facetime_caption.png);
-                    transform: translate(843px, -49px);
-                }
-            }
-        }
+  .facetime {
+    h1 {
+      width: 730px;
+      height: 330px;
+      background-image: url(../assets/images/wireless_headline.png);
+      transform: translateX(104px);
     }
+
+    .figures {
+      height: 773px;
+
+      figure {
+        transform: translateX(-68px);
+
+        figcaption {
+          width: 139px;
+          height: 46px;
+          background-image: url(../assets/images/wireless_facetime_caption.png);
+          transform: translate(843px, -49px);
+        }
+      }
+    }
+  }
 }
 
 /* FILES */
 .wireless {
-    .files figure {
-        transform: translate(34px, -34px);
+  .files figure {
+    transform: translate(34px, -34px);
 
-        figcaption {
-            width: 127px;
-            height: 46px;
-            background-image: url(../assets/images/wireless_files_caption.png);
-            transform: translate(96px, 639px);
-        }
+    figcaption {
+      width: 127px;
+      height: 46px;
+      background-image: url(../assets/images/wireless_files_caption.png);
+      transform: translate(96px, 639px);
     }
+  }
 }
+
+@media (max-width: 1000px) {
+  .wireless {
+    margin-top: 140px;
+    .facetime {
+      h1 {
+        width: 450px;
+        height: 200px;
+        transform: translate(70px, 0);
+      }
+
+      .figures {
+        height: 530px;
+        figure {
+          transform: translate(0, 0);
+          img {
+            width: 769px;
+          }
+          figcaption {
+            transform: scale(0.8) translate(670px, -60px);
+          }
+        }
+      }
+    }
+  }
+
+  .wireless {
+    .files figure {
+      img {
+        width: 676px;
+      }
+      figcaption {
+        transform: scale(0.8) translate(43px, 520px);
+      }
+    }
+  }
+}
+
+/* @media (max-width: 740px) {
+    .wireless {
+        .facetime {
+          h1 {
+          }
+      
+          .figures {
+      
+            figure {
+      
+              figcaption {
+              }
+            }
+          }
+        }
+      }
+
+      .wireless {
+        .files figure {
+      
+          figcaption {
+          }
+        }
+      }
+} */

@@ -121,10 +121,10 @@
   .camera .edit figure {
     transform: translate(40px, 0);
   }
-  .camera .edit figure img {
+  .camera .edit .figures figure img {
     width: 509px;
   }
-  .camera .edit figcaption {
+  .camera .edit .figures figure figcaption {
     transform: scale(0.8) translate(27px, 742px);
   }
 }
