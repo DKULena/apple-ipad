@@ -12,73 +12,167 @@
     }
 
     .info {
-        position: absolute;
-        top: 150px;
-        right: 0;
+      position: absolute;
+      top: 150px;
+      right: 0;
     }
 
     .figures {
-        height: 770px;
-        margin-top: 24px;
+      height: 770px;
+      margin-top: 24px;
 
-        figure {
-            transform: translateX(90px);
-            
-            figcaption {
-                width: 130px;
-                height: 110px;
-                background-image: url(../assets/images/camera_hardware_caption.png);
-                transform: translate(-116px, 383px);
-            }
+      figure {
+        transform: translateX(90px);
 
-            video {
-                position: absolute;
-                top: 36px;
-                left: 76px;
-                -webkit-mask-image: url(../assets/images/camera_video_mask.png);
-                mask-image: url(../assets/images/camera_video_mask.png);
-            }
-            .controller--play,
-            .controller--pause {
-                color: var(--color-link);
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                transform: translate(428px, -134px) rotate(-3deg);
-
-                img {
-                    width: 20px;
-                    margin-top: -2px;
-                }
-
-                &.hide {
-                    display: none;
-                }
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
+        figcaption {
+          width: 130px;
+          height: 110px;
+          background-image: url(../assets/images/camera_hardware_caption.png);
+          transform: translate(-116px, 383px);
         }
+
+        video {
+          position: absolute;
+          top: 36px;
+          left: 76px;
+          -webkit-mask-image: url(../assets/images/camera_video_mask.png);
+          mask-image: url(../assets/images/camera_video_mask.png);
+        }
+        .controller--play,
+        .controller--pause {
+          color: var(--color-link);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          transform: translate(428px, -134px) rotate(-3deg);
+
+          img {
+            width: 20px;
+            margin-top: -2px;
+          }
+
+          &.hide {
+            display: none;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
     }
   }
 }
 
 /* EDIT */
 .camera .edit {
-    .figures {
-        height: 910px;
+  .figures {
+    height: 910px;
 
-        figure {
-            transform: translateX(20px);
+    figure {
+      transform: translateX(20px);
 
-            figcaption {
-                width: 130px;
-                height: 47px;
-                background-image: url(../assets/images/camera_edit_caption.png);
-                transform: translate(27px, 905px);
-            }
-        }
+      figcaption {
+        width: 130px;
+        height: 47px;
+        background-image: url(../assets/images/camera_edit_caption.png);
+        transform: translate(27px, 905px);
+      }
     }
+  }
+}
+
+@media (max-width: 1000px) {
+  .camera {
+    margin-top: 165px;
+  }
+  .camera .stage h1 {
+    width: 405px;
+    height: 270px;
+    transform: translate(0, 0);
+  }
+  .camera .stage .info {
+    top: 0;
+  }
+  .camera .stage .figures {
+    height: 500px;
+  }
+  .camera .stage figure img {
+    width: 678px;
+  }
+  .camera .stage .figures figure video {
+    top: 23px;
+    left: 50px;
+    transform: scale(0.65);
+    transform-origin: 0 0;
+  }
+  .camera .stage .figures figure .controller--play,
+  .camera .stage .figures figure .controller--pause {
+    transform: translate(276px, -88px) rotate(-3deg);
+  }
+  .camera .stage .figures figure figcaption {
+    transform: scale(0.8) translate(-136px, 306px);
+  }
+
+  .camera .edit .figures {
+    height: auto;
+  }
+  .camera .edit figure {
+    transform: translate(40px, 0);
+  }
+  .camera .edit figure img {
+    width: 509px;
+  }
+  .camera .edit figcaption {
+    transform: scale(0.8) translate(27px, 742px);
+  }
+}
+
+@media (max-width: 740px) {
+    .camera {
+        margin-top: 120px;
+    }
+    .camera .stage h1 {
+        background-image: url(../assets/images/camera_headline_mobile.png);
+        margin: 0 auto;
+    }
+    .camera .stage .info {
+        position: static;
+        margin-top: 30px;
+    }
+    .camera .stage .figures {
+        height: auto;
+        margin-top: 64px;
+    }
+    .camera .stage .figures figure {
+        transform: translate(20px, 0);
+    }
+    .camera .stage .figures figure img {
+        width: 450px;
+    }
+    .camera .stage .figures figure video {
+        transform: scale(.43);
+        top: 15px;
+        left: 33px;
+    }
+    .camera .stage .figures figure .controller--play,
+    .camera .stage .figures figure .controller--pause {
+        transform: translate(169px, -51px) rotate(-3deg);
+    }
+    .camera .stage .figures figure figcaption {
+        background-image: url(../assets/images/camera_hardware_caption_mobile.png);
+        transform: scale(1) translate((110px, -40px));
+    }
+
+    .camera .edit .figures {
+        margin-top: 30px;
+    }
+    .camera .edit .figures figure img {
+        width: 343px;
+    }
+    .camera .edit .figures figure figcaption {
+        transform: scale(.8) translate(27px, 502px);
+    }
+
 }
