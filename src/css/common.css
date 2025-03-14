@@ -353,6 +353,23 @@ a.link {
   }
 }
 
+@media (max-width: 1000px) {
+    .whitebox {
+      padding: 60px 30px;
+    }
+    .whitebox .icon {
+      width: 44px;
+    }
+    .whitebox h1 {
+      font-size: 36px;
+    }
+}
+@media (max-width: 740px) {
+    .whitebox p {
+      font-size: 17px;
+    }
+}
+
 @keyframes sprite-icon {
   /* 1~10 */
   0.00% {
