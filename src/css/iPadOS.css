@@ -57,3 +57,120 @@
     }
   }
 }
+
+@media (max-width: 1000px) {
+  .iPadOS {
+    margin-top: 100px;
+    h1 {
+      width: 357px;
+      height: 274px;
+      margin: 0;
+    }
+
+    .infos {
+      margin-top: -98px;
+    }
+
+    .figures {
+      height: 520px;
+
+      .figure-split-view {
+        figure {
+          transform: translate(-17px, -187px);
+          img {
+            width: 441px;
+          }
+          figcaption {
+            transform: scale(0.8) translate(30px, -50px);
+          }
+        }
+      }
+
+      .figure-widgets {
+        figure {
+          transform: translate(180px, 3px);
+          img {
+            width: 441px;
+          }
+          figcaption {
+            transform: scale(0.8) translate(152px, 345px);
+          }
+        }
+      }
+      .figure-quick-note {
+        figure {
+          transform: translate(-346px, 119px);
+          img {
+            width: 333px;
+          }
+          figcaption {
+            transform: scale(0.8) translate(350px, 310px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  .iPadOS {
+    h1 {
+      width: 300px;
+      width: 227px;
+      margin: 0 auto;
+    }
+  
+    .infos {
+      margin-top: 30px;
+      .info {
+        max-width: 100%;
+      }
+    }
+    .figures {
+      display: block;
+      height: auto;
+
+      &>div {
+        display: flex;
+        justify-content: center;
+      }
+  
+      .figure-split-view {
+        figure {
+          transform: translate(64px, 55px);
+          img {
+            width: 370px;
+          }
+          figcaption {
+            transform: scale(.8) translate(39px, -55px);
+          }
+        }
+      }
+      .figure-widgets {
+        figure {
+          transform: translate(-19px, 34px);
+          img {
+            width: 375px;
+          }
+          figcaption {
+            transform: scale(.8) translate(252px, 287px);
+          }
+        }
+      }
+      .figure-quick-note {
+        figure {
+          transform: translate(35px, 46px);
+          img {
+            width: 283px;
+          }
+          figcaption {
+            background-image: url(../assets/images/ipados_quick_note_caption_mobile.png);
+            width: 76px;
+            height: 88px;
+            transform: scale(1) translate(-65px, 250px);
+          }
+        }
+      }
+    }
+  }
+}
