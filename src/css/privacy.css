@@ -35,3 +35,51 @@
     }
   }
 }
+
+@media (max-width: 1000px) {
+  .privacy {
+    margin-top: 120px;
+    h1 {
+      width: 368px;
+      height: 182px;
+      transform: translate(70px, 0);
+    }
+    .infos {
+      margin-top: 24px;
+    }
+    figure {
+      transform: translate(-18px, -440px);
+      img {
+        width: 441px;
+      }
+      figcaption {
+        .caption-apple-id {
+          transform: scale(0.8) translate(-22px, -18px);
+        }
+        .caption-touch-id {
+          transform: scale(0.8) translate(293px, 339px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  .privacy {
+    h1 {
+      width: 277px;
+      height: 136px;
+      transform: none;
+      margin: 0 auto;
+    }
+    .infos .info {
+      max-width: 100%;
+    }
+    .figures {
+      motion-path: 30px;
+    }
+    figure {
+      transform: translate(20px, 0);
+    }
+  }
+}
