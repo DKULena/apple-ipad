@@ -75,80 +75,77 @@ $shadow.addEventListener("click", hideSearch);
 
 const playScroll = () => {
   document.documentElement.classList.remove("fixed");
-}
+};
 
 const stopScroll = () => {
   document.documentElement.classList.add("fixed");
-}
+};
 
 // 헤더 메뉴 토글
-const $menuStarter = document.querySelector('header .menu-starter');
+const $menuStarter = document.querySelector("header .menu-starter");
 $menuStarter.addEventListener("click", () => {
-  if ($header.classList.contains('menuing')) {
-    $header.classList.remove('menuing');
+  if ($header.classList.contains("menuing")) {
+    $header.classList.remove("menuing");
     $searchInput.value = "";
     playScroll();
   } else {
-    $header.classList.add('menuing');
+    $header.classList.add("menuing");
     stopScroll();
   }
-})
+});
 
 // 헤더 검색
-const $searchTextField = document.querySelector('header .textfield');
-const $searchCancel = document.querySelector('header .search-canceler');
+const $searchTextField = document.querySelector("header .textfield");
+const $searchCancel = document.querySelector("header .search-canceler");
 $searchTextField.addEventListener("click", () => {
-  $header.classList.add('searching--mobile');
+  $header.classList.add("searching--mobile");
   $searchInput.focus();
-})
+});
 $searchCancel.addEventListener("click", () => {
-  $header.classList.remove('searching--mobile');
-})
+  $header.classList.remove("searching--mobile");
+});
 
-// 
+//
 window.addEventListener("resize", () => {
   if (window.innerWidth <= 740) {
-    $header.classList.remove('searching');
+    $header.classList.remove("searching");
   } else {
-    $header.classList.remove('searching--mobile');
+    $header.classList.remove("searching--mobile");
   }
+});
 
-})
-
-const $nav = document.querySelector('nav');
-const $navMenuToggler = $nav.querySelector('.menu-toggler');
-const $navMenuShadow = $nav.querySelector('.shadow')
+const $nav = document.querySelector("nav");
+const $navMenuToggler = $nav.querySelector(".menu-toggler");
+const $navMenuShadow = $nav.querySelector(".shadow");
 
 const showNavMenu = () => {
-  $nav.classList.add('menuing');
-}
+  $nav.classList.add("menuing");
+};
 const hideNavMenu = () => {
-  $nav.classList.remove('menuing');
-}
+  $nav.classList.remove("menuing");
+};
 
 $navMenuToggler.addEventListener("click", () => {
-  if ($nav.classList.contains('menuing')) {
+  if ($nav.classList.contains("menuing")) {
     hideNavMenu();
   } else {
     showNavMenu();
   }
-})
+});
 
 $nav.addEventListener("click", (e) => {
   e.stopPropagation();
-})
+});
 $navMenuShadow.addEventListener("click", hideNavMenu);
 
 window.addEventListener("click", hideNavMenu);
-
-
 
 // 요소 가시성 관찰
 const io = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
     entry.target.classList.add("show");
-    console.log('watching')
+    console.log("watching");
   });
 });
 
@@ -180,10 +177,10 @@ ipads.forEach((ipad) => {
   const $item = document.createElement("div");
   $item.classList.add("item");
 
-  let colorList = '';
+  let colorList = "";
   ipad.colors.forEach((color) => {
-    colorList += `<li style="background-color: ${color};"></li>`
-  })
+    colorList += `<li style="background-color: ${color};"></li>`;
+  });
 
   $item.innerHTML = /* html */ `
   <div class="thumbnail">
@@ -195,7 +192,7 @@ ipads.forEach((ipad) => {
   </ul>
     <h3 class="name">${ipad.name}</h3>
     <p class = "tagline">${ipad.tagline}</p>
-    <p class = "price">&#8361;${ipad.price.toLocaleString('en-US')}부터</p>
+    <p class = "price">&#8361;${ipad.price.toLocaleString("en-US")}부터</p>
     <button class="btn">구입하기</button>
     <a href="${ipad.url}" class="link">더 알아보기</a>
 
@@ -206,17 +203,17 @@ ipads.forEach((ipad) => {
 });
 
 // 푸터 내비게이션 맵 랜더링
-const $navigations = document.querySelector('footer .navigations')
-navigations.forEach(nav => {
-  const map = document.createElement('div')
-  map.classList.add('map')
+const $navigations = document.querySelector("footer .navigations");
+navigations.forEach((nav) => {
+  const map = document.createElement("div");
+  map.classList.add("map");
 
-  let mapList = ''
-  nav.maps.forEach(map => {
+  let mapList = "";
+  nav.maps.forEach((map) => {
     mapList += /* html */ `<li>
       <a href="${map.url}">${map.name}</a>
-    </li>`
-  })
+    </li>`;
+  });
 
   map.innerHTML = /* html */ `
     <h3>
@@ -226,11 +223,20 @@ navigations.forEach(nav => {
     <ul>
       ${mapList}
     </ul>
-  `
+  `;
 
-  $navigations.append(map)
-})
+  $navigations.append(map);
+});
 
 // 년도 삽입
-const $this_year = document.querySelector('span.this-year');
+const $this_year = document.querySelector("span.this-year");
 $this_year.textContent = new Date().getFullYear();
+
+const $map = document.querySelectorAll("footer .navigations .map");
+
+$map.forEach(function (el) {
+  const $h3 = el.querySelector("h3");
+  $h3.addEventListener("click", () => {
+    el.classList.toggle("active");
+  });
+});
