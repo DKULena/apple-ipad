@@ -166,6 +166,6 @@
         width: 525px;
     }
     .power .create .figures figure figcaption {
-        transform: translate(254px, 486px );
+        transform: scale(0.8) translate(254px, 486px);;
     }
 }
